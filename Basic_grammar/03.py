@@ -14,7 +14,7 @@ for i in range(e,number+e):
     else:
         print("*" + " " * (number - 2) + "*")
        
-#----------------------------------------------------------------------
+#-----------------------------------------------------------------------
 等价于上一个
 number = int(input("Please enter the side length of the square: "))
 for i in range(number):
