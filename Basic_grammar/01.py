@@ -10,7 +10,7 @@ else:
     
 
 # 给定一个不超过5位的正整数,判断其有几位
-number = int(input("Please enter a number not exceeding five digits: "))
+number = int(input("Please enter a positive integer no more than five digits: "))
 if number >= 1000:
     if number >= 10000:
         print("What you type is: five digits")
