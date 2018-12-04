@@ -17,3 +17,11 @@ for i in range(num):
     b = a % 10
     a //= 10
     print(b)
+    
+----------------------------------------------------------------------------------    
+ 
+number = int(input("Please enter a positive integer no more than five digits: "))
+number *= 10
+while (number // 10) != 0:
+    number //= 10
+    print(number % 10)   
