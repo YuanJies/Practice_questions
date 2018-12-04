@@ -5,7 +5,7 @@ for i in range(number-2):
     print("*" + " " * (number - 2) + "*")
 print("*" * number)
 
-#---------------------------------------------------------------------
+#----------------------------------------------------------------------
 
 number = int(input("Please enter the side length of the square: "))
 e = -number  // 2
