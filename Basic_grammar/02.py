@@ -50,6 +50,7 @@ for i in range(num,0,-1):
     a = b
     
 #------------------------------------------------------------------------------------
+
 number = int(input("Please enter a positive integer no more than five digits: "))
 if number >= 1000:
     if number >= 10000:
@@ -69,6 +70,7 @@ while num != 0:
     num //= 10
     
 #------------------------------------------------------------------------------------
+
 number = int(input("Please enter a positive integer no more than five digits: "))
 w = 10000
 length = 5
