@@ -23,3 +23,28 @@ else:
         print("What you type is: two digits")
     else:
         print("What you type is: one digits")
+
+        
+        
+        
+# 计算10以内的偶数（for循环）
+for i in range(0,10,2):
+    print(i)
+    
+    
+    
+    
+# 计算10以内的奇数（for循环）
+for i in range(1,10,2):
+    print(i)
+    
+    
+    
+    
+# 计算1000以内的被7整除的前20个数(for循环)
+count = 0
+for i in range(0,1000,7):
+    print(i)
+    count += 1
+    if count >= 20:
+        break
