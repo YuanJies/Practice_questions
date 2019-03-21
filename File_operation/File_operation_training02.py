@@ -71,3 +71,49 @@ with open('sample.txt', encoding='utf8') as f:
 
 for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True):
     print(k, v)
+
+
+# 分割key的另一种思路
+def makekey(s:str):
+    chars = set(r"""!'"#./\()[],*-""")
+    key = s.lower()
+    ret = []
+    start = 0
+    length = len(key)
+
+
+    for i, c in enumerate(key):
+        if c in chars:
+            if start == i:    # 如果紧挨着还是特殊字符, start一定等于i
+                start += 1    # 加1并continue
+                continue
+            ret.append(key[start:i])
+            start = i + 1    # 加1是跳过这个不需要的特殊字符c
+    else:
+        if start < len(key):    # 小于,说明还有有效的字符,而且一直到末尾
+            ret.append(key[start:])
+
+
+    return ret
+
+
+print(makekey('os.path.exists(path)'))
+print(makekey('os.path.-exists(path))'))
+print(makekey('path.os...'))
+print(makekey('path'))
+print(makekey('path-p'))
+print(makekey('***...'))
+print(makekey(''))
+
+
+d = {}
+with open('sample.txt', encoding='utf8') as f:
+    for line in f:
+        words = line.split()
+        for wordlist in map(makekey, words):
+            for word in wordlist:
+                d[word] = d.get(word, 0) + 1
+
+
+for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True):
+    print(k, v)
